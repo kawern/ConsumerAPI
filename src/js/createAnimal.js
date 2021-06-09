@@ -25,5 +25,4 @@ let submitAnimal = function(e) {
   .catch(err => console.error(err));
 }
 form.addEventListener("submit", submitAnimal)
-
 })

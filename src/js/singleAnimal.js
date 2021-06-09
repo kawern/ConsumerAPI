@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     let singleElm = document.querySelector(".single");
-    let back = document.querySelector(".back");
     let header = document.querySelector(".header_singleAnimal");
 
     if (singleElm) {
@@ -24,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 let li = document.createElement("div")
+                let admin = document.querySelector(".admin")
             
                 li.innerHTML = `
                 <p>Type: ${data.type}</p>
@@ -34,11 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>${data.colors}</p>
                 `
                 singleElm.append(li)
+
+                admin.innerHTML = `
+                <p><a href="/editAnimal?id=${data._id}">Edit Animal</a></p>
+                <p><a href="/deleteAnimal?id=${data._id}">Delete Animal</a></p>
+                `
             })
-
-
-back.addEventListener("click", function() {
-window.history.back()
-})
     }
 })
