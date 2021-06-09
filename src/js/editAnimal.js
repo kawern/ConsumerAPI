@@ -39,12 +39,15 @@ let editAnimal = function(e) {
     e.preventDefault();
 
     const editFormData = new FormData();
+
+    let barArray = [e.target.colors.value];
+
     editFormData.append("type", e.target.type.value);
     editFormData.append("breed", e.target.breed.value);
     editFormData.append("name", e.target.name.value);
     editFormData.append("age", e.target.age.value);
     editFormData.append("sex", e.target.sex.value);
-    editFormData.append("colors", e.target.colors.value);
+    editFormData.append("colors", JSON.stringify(barArray));
 
     fetch(`https://kawernapi.herokuapp.com/api/v1/animals/${animalID}`, {
   "method": "PATCH",
