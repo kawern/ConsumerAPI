@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
             let test = document.querySelector("#editAnimal")
         
             test.innerHTML = `
-            <form id="editAnimal">
 
         <label for="type">Type:<input type="text" name="type" id="type" value="${data.type}"></label>
         <label for="breed">Breed:<input type="text" name="breed" id="breed" value="${data.breed}"></label>
@@ -26,7 +25,32 @@ document.addEventListener("DOMContentLoaded", function () {
         <label for="colors">Color(s):<input type="text" name="colors" id="colors"  value="${data.colors}"></label>
         <button type="submit">Edit animal</button>
 
-    </form>
             `
+let editForm = document.querySelector("#editAnimal");
+
+
+let editAnimal = function(e) {
+    e.preventDefault();
+
+    const editFormData = new FormData();
+    editFormData.append("type", e.target.type.value);
+    editFormData.append("breed", e.target.breed.value);
+    editFormData.append("name", e.target.name.value);
+    editFormData.append("age", e.target.age.value);
+    editFormData.append("sex", e.target.sex.value);
+    editFormData.append("colors", e.target.colors.value);
+
+    fetch(`http://kawernapi.herokuapp.com/api/v1/animals/${animalID}`, {
+  "method": "PATCH",
+  "headers": {
+    "Authorization": "Bearer 7835iyrehbsfm7523tyewfhsvdb46oitrjgdn2u3tewgndb"
+  },
+  "body": editFormData
+})
+  .then(response => console.log(response))
+  .then(alert("The animal has now been edited!"))
+  .catch(err => console.error(err));
+}
+editForm.addEventListener("submit", editAnimal)
 }
 )})

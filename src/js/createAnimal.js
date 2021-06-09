@@ -22,6 +22,7 @@ let submitAnimal = function(e) {
   "body": myFormData
 })
   .then(response => console.log(response))
+  .then(alert("The animal has now been created!"))
   .catch(err => console.error(err));
 }
 form.addEventListener("submit", submitAnimal)

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 admin.innerHTML = `
                 <p><a href="/editAnimal?id=${data._id}">Edit Animal</a></p>
-                <p><a href="/deleteAnimal?id=${data._id}">Delete Animal</a></p>
+                <p><a class="deleteBtn" href="/deleteAnimal?id=${data._id}">Delete Animal</a></p>
                 `
             })
     }
