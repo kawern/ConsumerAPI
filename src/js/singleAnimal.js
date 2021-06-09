@@ -26,12 +26,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 let admin = document.querySelector(".admin")
             
                 li.innerHTML = `
-                <p>Type: ${data.type}</p>
-                <p>${data.breed}</p>
-                <p>${data.name}</p>
-                <p>${data.sex}</p>
-                <p>${data.age}</p>
-                <p>${data.colors}</p>
+                <table>
+                        <tr>
+                            <th>TYPE</th>
+                            <th>BREED</th>
+                            <th>NAME</th>
+                            <th>SEX</th>
+                            <th>AGE</th>
+                            <th>COLORS</th>
+                        </tr>
+                        <tr>
+                            <td>${data.type}</td>
+                            <td>${data.breed}</td>
+                            <td>${data.name}</td>
+                            <td>${data.sex}</td>
+                            <td>${data.age}</td>
+                            <td>${data.colors}</td>
+                        </tr>
+                    </table>
                 `
                 singleElm.append(li)
 
