@@ -15,14 +15,20 @@ document.addEventListener("DOMContentLoaded", function () {
         
             editAnimalForm.innerHTML = `
 
-        <label for="type">Type:<input type="text" name="type" id="type" value="${data.type}"></label>
-        <label for="breed">Breed:<input type="text" name="breed" id="breed" value="${data.breed}"></label>
-        <label for="name">Name:<input type="text" name="name" id="name" value="${data.name}"></label>
-        <label for="age">Age:<input type="number" name="age" id="age"  value="${data.age}">
-            </label>
-        <label for="sex">Sex:<input type="text" name="sex" id="sex"  value="${data.sex}">
-            </label>
-        <label for="colors">Color(s):<input type="text" name="colors" id="colors"  value="${data.colors}"></label>
+        <label for="type">Type:</label>
+        <input type="text" name="type" id="type" value="${data.type}">
+        <label for="breed">Breed:</label>
+        <input type="text" name="breed" id="breed" value="${data.breed}">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="${data.name}">
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age"  value="${data.age}">
+            
+        <label for="sex">Sex:</label>
+        <input type="text" name="sex" id="sex"  value="${data.sex}">
+            
+        <label for="colors">Color(s):</label>
+        <input type="text" name="colors" id="colors"  value="${data.colors}">
         <button type="submit">Edit animal</button>
 
             `
@@ -49,6 +55,7 @@ let editAnimal = function(e) {
 })
   .then(response => console.log(response))
   .then(alert("The animal has now been edited!"))
+  .then(window.location="../")
   .catch(err => console.error(err));
 }
 editForm.addEventListener("submit", editAnimal)
