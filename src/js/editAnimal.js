@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let url = new URLSearchParams(window.location.search)
     let animalID = url.get("id")
     
-    fetch(`http://kawernapi.herokuapp.com/api/v1/animals/${animalID}`, {
+    fetch(`https://kawernapi.herokuapp.com/api/v1/animals/${animalID}`, {
         "method": "GET",
         "headers": {
           "Authorization": "Bearer 7835iyrehbsfm7523tyewfhsvdb46oitrjgdn2u3tewgndb"
@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            let test = document.querySelector("#editAnimal")
+            let editAnimalForm = document.querySelector("#editAnimal")
         
-            test.innerHTML = `
+            editAnimalForm.innerHTML = `
 
         <label for="type">Type:<input type="text" name="type" id="type" value="${data.type}"></label>
         <label for="breed">Breed:<input type="text" name="breed" id="breed" value="${data.breed}"></label>
@@ -40,7 +40,7 @@ let editAnimal = function(e) {
     editFormData.append("sex", e.target.sex.value);
     editFormData.append("colors", e.target.colors.value);
 
-    fetch(`http://kawernapi.herokuapp.com/api/v1/animals/${animalID}`, {
+    fetch(`https://kawernapi.herokuapp.com/api/v1/animals/${animalID}`, {
   "method": "PATCH",
   "headers": {
     "Authorization": "Bearer 7835iyrehbsfm7523tyewfhsvdb46oitrjgdn2u3tewgndb"

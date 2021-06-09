@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let animalID = url.get("id")
 
 
-        fetch(`http://kawernapi.herokuapp.com/api/v1/animals/${animalID}`, {
+        fetch(`https://kawernapi.herokuapp.com/api/v1/animals/${animalID}`, {
             "method": "GET",
             "headers": {
               "Authorization": "Bearer 7835iyrehbsfm7523tyewfhsvdb46oitrjgdn2u3tewgndb"

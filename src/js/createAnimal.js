@@ -14,7 +14,7 @@ let submitAnimal = function(e) {
     myFormData.append("sex", e.target.sex.value);
     myFormData.append("colors", e.target.colors.value);
 
-    fetch("http://kawernapi.herokuapp.com/api/v1/animals", {
+    fetch("https://kawernapi.herokuapp.com/api/v1/animals", {
   "method": "POST",
   "headers": {
     "Authorization": "Bearer 7835iyrehbsfm7523tyewfhsvdb46oitrjgdn2u3tewgndb"
@@ -23,6 +23,7 @@ let submitAnimal = function(e) {
 })
   .then(response => console.log(response))
   .then(alert("The animal has now been created!"))
+  .then(window.location="../")
   .catch(err => console.error(err));
 }
 form.addEventListener("submit", submitAnimal)

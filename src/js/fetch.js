@@ -19,7 +19,7 @@ if (pokelistElm) {
 //     }
 //     console.log(url)
 
-fetch("http://kawernapi.herokuapp.com/api/v1/animals?offset=0&limit=50", {
+fetch("https://kawernapi.herokuapp.com/api/v1/animals?offset=0&limit=50", {
     "method": "GET",
     "headers": {
       "Authorization": "Bearer 7835iyrehbsfm7523tyewfhsvdb46oitrjgdn2u3tewgndb"
