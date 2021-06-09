@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
         <label for="colors">Color(s):</label>
         <input type="text" name="colors" id="colors"  value="${data.colors}">
-        <button type="submit">Edit animal</button>
+        <input type="submit" value="Edit animal"></input>
 
             `
 let editForm = document.querySelector("#editAnimal");
@@ -55,7 +55,7 @@ let editAnimal = function(e) {
 })
   .then(response => console.log(response))
   .then(alert("The animal has now been edited!"))
-  .then(window.location="../")
+  .then(window.history.back())
   .catch(err => console.error(err));
 }
 editForm.addEventListener("submit", editAnimal)
